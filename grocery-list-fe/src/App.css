@@ -1,0 +1,17 @@
+.groceryListContainer {
+  margin: 0 auto;
+  width: 900px;
+  display: flex;
+}
+
+.groceryLists {
+  border: 1px solid;
+  width: 50%;
+}
+
+.currentGroceryList {
+  border: 1px solid;
+  width: 50%;
+}
+
+

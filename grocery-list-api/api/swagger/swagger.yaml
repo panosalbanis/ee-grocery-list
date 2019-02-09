@@ -1,0 +1,122 @@
+swagger: "2.0"
+info:
+  version: "0.0.1"
+  title: Equal Experts Grocery List API
+host: localhost:10010
+basePath: /v1/
+schemes:
+  - http
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /lists:
+    x-swagger-router-controller: lists
+    get:
+      description: Returns all grocery lists
+      operationId: retrieveLists
+      responses:
+        "200":
+          description: Success
+          schema:
+            $ref: "#/definitions/GroceryLists"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+    post:
+      produces:
+        - text/plain; charset=utf-8
+      description: Creates a new  grocery list
+      operationId: createList
+      responses:
+        "201":
+          description: Success
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+  /lists/{id}:
+    x-swagger-router-controller: lists
+    get:
+      description: Returns a grocery list
+      operationId: retrieveList
+      parameters:
+        - name: id
+          in: path
+          description: The Id of the grocery list to retrieve
+          required: true
+          type: integer
+      responses:
+        "200":
+          description: Success
+          schema:
+            $ref: "#/definitions/GroceryList"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+    put:
+      description: Adds an item to a grocery list
+      operationId: addItemToList
+      produces:
+        - text/plain; charset=utf-8
+      consumes:
+        - application/json
+      parameters:
+        - name: id
+          in: path
+          description: The Id of the grocery list to add to
+          required: true
+          type: integer
+        - in: body
+          name: item
+          description: The item to add.
+          schema:
+            $ref: '#/definitions/Item'
+      responses:
+        "204":
+          description: Success
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+  /swagger:
+    x-swagger-pipe: swagger_raw
+definitions:
+  Item:
+    title: A grocery list item
+    type: object
+    properties:
+      name:
+        type: string
+        description: The name of the item
+      quantity:
+        type: integer
+        description: The quantity of the item
+    required:
+      - name
+      - quantity
+  GroceryList:
+    title: A grocery list
+    type: object
+    properties:
+      id:
+        type: integer
+        description: The id of the grocery list
+      items:
+        type: array
+        items:
+          $ref: "#/definitions/Item"
+  GroceryLists:
+    type: array
+    items:
+      $ref: "#/definitions/GroceryList"
+  ErrorResponse:
+    required:
+      - message
+    properties:
+      message:
+        type: string
