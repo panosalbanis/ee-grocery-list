@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './AddItem.css'
 
 class AddItem extends Component {
   constructor() {
@@ -14,12 +15,12 @@ class AddItem extends Component {
 
   nameChangeHandler(event) {
     event.persist()
-    this.setState({name: event.target.value})
+    this.setState({ name: event.target.value })
   }
 
   quantityChangeHandler(event) {
     event.persist()
-    this.setState({quantity: event.target.value})
+    this.setState({ quantity: event.target.value })
 
   }
 
@@ -32,19 +33,17 @@ class AddItem extends Component {
   }
 
   render() {
-    const {addItemHandler, list} = this.props
+    const { addItemHandler, list } = this.props
     return (
-      <div className="addItem">
-        <span>
-          <label>Product Name
+      <span className="addItem">
+        <label>Product Name
             <input type="text" name="name" value={this.state.name} onChange={this.nameChangeHandler}></input>
-          </label>
-          <label>Product Quantity
+        </label>
+        <label>Product Quantity
             <input type="text" name="quantity" value={this.state.quantity} onChange={this.quantityChangeHandler}></input>
-          </label>
-          <button onClick={() => this.handleClick(list.id, addItemHandler)}>Add Item</button>
-        </span>
-      </div>
+        </label>
+        <div className="addItemButton" onClick={() => this.handleClick(list.id, addItemHandler)}>Add Item</div>
+      </span>
     )
   }
 }

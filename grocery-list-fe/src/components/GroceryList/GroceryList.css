@@ -1,0 +1,10 @@
+.groceryList {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.addItemContainer {
+    padding: 0.5em;
+}

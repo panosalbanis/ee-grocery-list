@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import GroceryLists from './components/GroceryLists';
-import GroceryList from './components/GroceryList';
-import AddGroceryList from './components/AddGroceryList';
+import GroceryLists from './components/GroceryLists/GroceryLists';
+import GroceryList from './components/GroceryList/GroceryList';
+import AddGroceryList from './components/AddGroceryList/AddGroceryList';
 import { getGroceryLists, getGroceryList, addGroceryList, addItem } from './apiCalls';
 
 class App extends Component {

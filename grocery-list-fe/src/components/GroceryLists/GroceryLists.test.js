@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import GroceryLists from './GroceryLists'
-import GroceryListsItem from './GroceryListsItem'
+import GroceryListsItem from '../GroceryListItem/GroceryListsItem'
 
 describe('GroceryLists', () => {
   it('renders an empty list of groceryLists', () => {

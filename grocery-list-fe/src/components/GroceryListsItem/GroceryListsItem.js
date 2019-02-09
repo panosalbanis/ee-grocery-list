@@ -1,11 +1,14 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import './GroceryListsItem.css'
 
 class GroceryListsItem extends Component {
   render() {
     const {listId, clickHandler} = this.props
     return (
-      <button className="listId" onClick={() => clickHandler(listId)}>{listId}</button>
+      <li>
+        <div className="listId" onClick={() => clickHandler(listId)}>{listId}</div>
+      </li>
     )
   }
 }

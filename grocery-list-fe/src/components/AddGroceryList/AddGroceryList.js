@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import './AddGroceryList.css'
 
 class AddGroceryList extends Component {
   render() {
     const { handleClick } = this.props
     return (
       <div className="addList">
-        <button onClick={handleClick}>Add Grocery List</button>
+        <div onClick={handleClick}>Add Grocery List</div>
       </div>
     )
   }

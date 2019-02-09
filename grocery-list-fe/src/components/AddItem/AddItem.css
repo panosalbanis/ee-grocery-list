@@ -1,0 +1,15 @@
+label {
+    margin-right: 1em;
+}
+
+input {
+    margin-left: 1em;
+}
+
+.addItem {
+    display: flex;
+}
+
+.addItemButton:hover {
+    cursor: pointer;
+}

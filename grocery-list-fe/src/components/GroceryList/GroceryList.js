@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'
-import Item from './Item/Item'
-import AddItem from './AddItem';
+import Item from '../Item/Item'
+import AddItem from '../AddItem/AddItem';
+import './GroceryList.css'
+
 class GroceryList extends Component {
 
   render() {
@@ -18,7 +20,9 @@ class GroceryList extends Component {
               )
             }
           </ul>
-          <AddItem addItemHandler={addItemHandler} list={list}></AddItem>
+          <div className="addItemContainer">
+            <AddItem addItemHandler={addItemHandler} list={list}></AddItem>
+          </div>
         </div>
       ) : null
 

@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'
-import GroceryListsItem from './GroceryListsItem'
+import GroceryListsItem from '../GroceryListsItem/GroceryListsItem'
+import './GroceryLists.css'
 
 class GroceryLists extends Component {
   render() {
     const { lists, groceryListSelectedHandler} = this.props
     return (
-      <div className="groceryLists">
-        <ul>
+      <div className="groceryListsContainer">
+        <ul className="groceryListsList">
           {
             lists.map(
               ({ id }) =>
