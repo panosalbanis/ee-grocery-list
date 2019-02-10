@@ -3,7 +3,12 @@ import './App.css';
 import GroceryLists from './components/GroceryLists/GroceryLists';
 import GroceryList from './components/GroceryList/GroceryList';
 import AddGroceryList from './components/AddGroceryList/AddGroceryList';
-import { getGroceryLists, getGroceryList, addGroceryList, addItem } from './apiCalls';
+import {
+  getGroceryLists,
+  getGroceryList,
+  addGroceryList,
+  addItem
+} from './apiCalls';
 
 class App extends Component {
   constructor() {
@@ -11,11 +16,13 @@ class App extends Component {
     this.state = {
       groceryLists: [],
       currentGroceryList: {}
-    }
-    this.groceryListSelectedHandler = this.groceryListSelectedHandler.bind(this)
-    this.updateGroceryLists = this.updateGroceryLists.bind(this)
-    this.addGroceryListHandler = this.addGroceryListHandler.bind(this)
-    this.addItemHandler = this.addItemHandler.bind(this)
+    };
+    this.groceryListSelectedHandler = this.groceryListSelectedHandler.bind(
+      this
+    );
+    this.updateGroceryLists = this.updateGroceryLists.bind(this);
+    this.addGroceryListHandler = this.addGroceryListHandler.bind(this);
+    this.addItemHandler = this.addItemHandler.bind(this);
   }
   async componentDidMount() {
     await this.updateGroceryLists();
@@ -31,29 +38,35 @@ class App extends Component {
   }
 
   async addItemHandler(listId, name, quantity) {
-    await addItem(listId, name, quantity)
+    await addItem(listId, name, quantity);
     await this.updateGroceryList(listId);
   }
 
   async updateGroceryLists() {
     const groceryLists = await getGroceryLists();
-    this.setState({ groceryLists })
+    this.setState({ groceryLists });
   }
 
   async updateGroceryList(id) {
     const currentGroceryList = await getGroceryList(id);
-    this.setState({currentGroceryList})
+    this.setState({ currentGroceryList });
   }
 
   render() {
     return (
       <div className="groceryListContainer">
         <div className="groceryLists">
-          <GroceryLists lists={this.state.groceryLists} groceryListSelectedHandler={this.groceryListSelectedHandler}></GroceryLists>
-          <AddGroceryList handleClick={this.addGroceryListHandler}></AddGroceryList>
-        </div >
+          <GroceryLists
+            lists={this.state.groceryLists}
+            groceryListSelectedHandler={this.groceryListSelectedHandler}
+          />
+          <AddGroceryList handleClick={this.addGroceryListHandler} />
+        </div>
         <div className="currentGroceryList">
-          <GroceryList list={this.state.currentGroceryList} addItemHandler={this.addItemHandler}></GroceryList>
+          <GroceryList
+            list={this.state.currentGroceryList}
+            addItemHandler={this.addItemHandler}
+          />
         </div>
       </div>
     );
