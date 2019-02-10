@@ -1,9 +1,4 @@
 .addList {
     margin: 0;
     padding: 0.5em;
-    text-align: center;
-}
-
-.addList:hover {
-    cursor: pointer;
 }

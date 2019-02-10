@@ -6,7 +6,7 @@ class AddGroceryList extends Component {
     const { handleClick } = this.props
     return (
       <div className="addList">
-        <div onClick={handleClick}>Add Grocery List</div>
+        <div className="button" onClick={handleClick}>Add Grocery List</div>
       </div>
     )
   }

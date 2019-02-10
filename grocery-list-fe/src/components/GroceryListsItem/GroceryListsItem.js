@@ -7,7 +7,7 @@ class GroceryListsItem extends Component {
     const {listId, clickHandler} = this.props
     return (
       <li>
-        <div className="listId" onClick={() => clickHandler(listId)}>{listId}</div>
+        <div className="listId button" onClick={() => clickHandler(listId)}>List {listId}</div>
       </li>
     )
   }

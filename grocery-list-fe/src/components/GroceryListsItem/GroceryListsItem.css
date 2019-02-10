@@ -1,10 +1,4 @@
 .listId {
-    width: 100%;
     margin: 0 0 8px 0;
-    background-color: white;
-    text-align: center;
-    
-}
-.listId:hover {
-    cursor: pointer;
+    padding: 0.5em; 
 }

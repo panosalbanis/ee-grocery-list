@@ -36,13 +36,13 @@ class AddItem extends Component {
     const { addItemHandler, list } = this.props
     return (
       <span className="addItem">
-        <label>Product Name
+        <label>Name
             <input type="text" name="name" value={this.state.name} onChange={this.nameChangeHandler}></input>
         </label>
-        <label>Product Quantity
+        <label>Quantity
             <input type="text" name="quantity" value={this.state.quantity} onChange={this.quantityChangeHandler}></input>
         </label>
-        <div className="addItemButton" onClick={() => this.handleClick(list.id, addItemHandler)}>Add Item</div>
+        <div className="button" onClick={() => this.handleClick(list.id, addItemHandler)}>Add Item</div>
       </span>
     )
   }
