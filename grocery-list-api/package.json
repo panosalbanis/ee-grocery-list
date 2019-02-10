@@ -14,11 +14,13 @@
   },
   "devDependencies": {
     "jest": "^24.0.0",
+    "prettier": "^1.16.4",
     "should": "^7.1.0",
     "supertest": "^1.0.0"
   },
   "scripts": {
     "start": "node app.js",
-    "test": "jest"
+    "test": "jest",
+    "prettier": "prettier --write --single-quote api/**/*.js test/**/*.js app.js"
   }
 }

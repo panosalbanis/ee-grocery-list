@@ -1,10 +1,10 @@
 'use strict';
 
 const SwaggerExpress = require('swagger-express-mw');
-const loki = require('lokijs')
+const loki = require('lokijs');
 
 const db = new loki('loki.json');
-var groceryLists = db.addCollection('groceryLists')
+var groceryLists = db.addCollection('groceryLists');
 
 const app = require('express')();
 
@@ -13,7 +13,9 @@ var config = {
 };
 
 SwaggerExpress.create(config, function(err, swaggerExpress) {
-  if (err) { throw err; }
+  if (err) {
+    throw err;
+  }
 
   swaggerExpress.register(app);
 
@@ -21,9 +23,9 @@ SwaggerExpress.create(config, function(err, swaggerExpress) {
   app.listen(port);
 });
 
-app.use((req, res, next)  => {
-  req.groceryLists = groceryLists
-  next()
-})
+app.use((req, res, next) => {
+  req.groceryLists = groceryLists;
+  next();
+});
 
 module.exports = app;
