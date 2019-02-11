@@ -1,1 +1,15 @@
-# Equal Experts Grocery list API
+# Equal Experts Grocery List API
+
+## How To Run
+
+### Install the dependencies
+
+Run `npm install`
+
+### Run the application
+
+Run `npm start`
+
+### Run the Tests
+
+Run `npm test`
