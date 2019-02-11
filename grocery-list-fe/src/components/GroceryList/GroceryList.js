@@ -24,16 +24,18 @@ class GroceryList extends Component {
 }
 
 GroceryList.propTypes = {
-  items: PropTypes.arrayOf(
-    PropTypes.shape({
+  list: PropTypes.shape({
+    id: PropTypes.number,
+    items: PropTypes.shape({
       name: PropTypes.string,
       quantity: PropTypes.number
     })
-  )
+  }),
+  addItemHandler: PropTypes.func
 };
 
 GroceryList.defaultProps = {
-  items: []
+  addItemHandler: () => null
 };
 
 export default GroceryList;

@@ -19,4 +19,9 @@ Item.propTypes = {
   quantity: PropTypes.number.isRequired
 };
 
+Item.defaultProps = {
+  name: '',
+  quantity: ''
+};
+
 export default Item;

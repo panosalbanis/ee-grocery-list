@@ -25,14 +25,15 @@ class GroceryLists extends Component {
 GroceryLists.propTypes = {
   lists: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number,
-      items: PropTypes.arrayOf(PropTypes.object)
+      id: PropTypes.number
     })
-  )
+  ),
+  groceryListSelectedHandler: PropTypes.func
 };
 
 GroceryLists.defaultProps = {
-  lists: []
+  lists: [],
+  groceryListSelectedHandler: () => null
 };
 
 export default GroceryLists;

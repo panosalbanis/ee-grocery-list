@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './AddItem.css';
 
 class AddItem extends Component {
@@ -63,5 +64,18 @@ class AddItem extends Component {
     );
   }
 }
+
+AddItem.propTypes = {
+  addItemHandler: PropTypes.func,
+  list: PropTypes.shape({
+    id: PropTypes.number
+  })
+};
+
+AddItem.defaultProps = {
+  nameChangeHandler: () => null,
+  quantityChangeHandler: () => null,
+  handleClick: () => null
+};
 
 export default AddItem;

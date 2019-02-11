@@ -16,7 +16,12 @@ class GroceryListsItem extends Component {
 }
 
 GroceryListsItem.propTypes = {
-  listId: PropTypes.number.isRequired
+  listId: PropTypes.number.isRequired,
+  clickHandler: PropTypes.func
+};
+
+GroceryListsItem.defaultProps = {
+  clickHandler: () => null
 };
 
 export default GroceryListsItem;

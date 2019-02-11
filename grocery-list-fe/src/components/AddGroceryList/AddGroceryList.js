@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './AddGroceryList.css';
 
 class AddGroceryList extends Component {
@@ -13,5 +14,13 @@ class AddGroceryList extends Component {
     );
   }
 }
+
+AddGroceryList.propTypes = {
+  handleClick: PropTypes.func
+};
+
+AddGroceryList.defaultProps = {
+  handleClick: () => null
+};
 
 export default AddGroceryList;
