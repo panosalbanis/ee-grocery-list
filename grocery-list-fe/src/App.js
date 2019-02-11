@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
 import GroceryLists from './components/GroceryLists/GroceryLists';
 import GroceryList from './components/GroceryList/GroceryList';
 import AddGroceryList from './components/AddGroceryList/AddGroceryList';
@@ -9,6 +8,7 @@ import {
   addGroceryList,
   addItem
 } from './apiCalls';
+import './App.css';
 
 class App extends Component {
   constructor() {
