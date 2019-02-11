@@ -1,12 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import GroceryLists from './GroceryLists';
-import GroceryListsItem from '../GroceryListItem/GroceryListsItem';
+import GroceryListsItem from '../GroceryListsItem/GroceryListsItem';
 
 describe('GroceryLists', () => {
   it('renders an empty list of groceryLists', () => {
     const wrapper = shallow(<GroceryLists lists={[]} />);
-    expect(wrapper.find('.groceryLists ul').text()).toEqual('');
+    expect(wrapper.find('ul.groceryListsList').text()).toEqual('');
   });
 
   it('renders a list of groceryLists', () => {

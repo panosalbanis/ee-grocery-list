@@ -26,10 +26,12 @@ class GroceryList extends Component {
 GroceryList.propTypes = {
   list: PropTypes.shape({
     id: PropTypes.number,
-    items: PropTypes.shape({
-      name: PropTypes.string,
-      quantity: PropTypes.number
-    })
+    items: PropTypes.arrayOf(
+      PropTypes.shape({
+        name: PropTypes.string,
+        quantity: PropTypes.number
+      })
+    )
   }),
   addItemHandler: PropTypes.func
 };
