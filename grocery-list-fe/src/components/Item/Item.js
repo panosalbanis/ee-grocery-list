@@ -1,17 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import './Item.css';
 
-class Item extends Component {
-  render() {
-    const { name, quantity } = this.props;
-    return (
-      <li>
-        <span className="name">{name}</span>
-        <span className="quantity">{quantity}</span>
-      </li>
-    );
-  }
+function Item(props) {
+  const { name, quantity } = props;
+  return (
+    <li>
+      <span className="name">{name}</span>
+      <span className="quantity">{quantity}</span>
+    </li>
+  );
 }
 
 Item.propTypes = {

@@ -1,18 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import './AddGroceryList.css';
 
-class AddGroceryList extends Component {
-  render() {
-    const { handleClick } = this.props;
-    return (
-      <div className="addListContainer">
-        <div className="button" onClick={handleClick}>
-          Add Grocery List
-        </div>
+function AddGroceryList(props) {
+  const { handleClick } = props;
+  return (
+    <div className="addListContainer">
+      <div className="button" onClick={handleClick}>
+        Add Grocery List
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 AddGroceryList.propTypes = {
