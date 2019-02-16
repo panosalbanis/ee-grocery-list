@@ -7,6 +7,7 @@ describe('AddGroceryList', () => {
     const wrapper = shallow(<AddGroceryList />);
     expect(wrapper.find('div.button').text()).toEqual('Add Grocery List');
   });
+
   it('clicking the `Add Grocery List` button, runs the handler function', () => {
     const handleClickSpy = jest.fn();
     const wrapper = shallow(<AddGroceryList handleClick={handleClickSpy} />);

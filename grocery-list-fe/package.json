@@ -14,7 +14,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prettier": "prettier --write --single-quote src/**/*.js"
+    "prettier": "prettier --write --single-quote src/**/*.{js,css}"
   },
   "eslintConfig": {
     "extends": "react-app"

@@ -11,7 +11,7 @@ class AddItem extends Component {
     };
     this.nameChangeHandler = this.nameChangeHandler.bind(this);
     this.quantityChangeHandler = this.quantityChangeHandler.bind(this);
-    this.handleClick = this.handleClick.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   nameChangeHandler(event) {
@@ -24,7 +24,8 @@ class AddItem extends Component {
     this.setState({ quantity: event.target.value });
   }
 
-  handleClick(listId, addItemHandler) {
+  handleSubmit(event, listId, addItemHandler) {
+    event.preventDefault();
     addItemHandler(listId, this.state.name, parseInt(this.state.quantity));
     this.setState({
       name: '',
@@ -35,32 +36,31 @@ class AddItem extends Component {
   render() {
     const { addItemHandler, list } = this.props;
     return (
-      <span className="addItem">
-        <label>
-          Name
-          <input
-            type="text"
-            name="name"
-            value={this.state.name}
-            onChange={this.nameChangeHandler}
-          />
-        </label>
-        <label>
-          Quantity
-          <input
-            type="text"
-            name="quantity"
-            value={this.state.quantity}
-            onChange={this.quantityChangeHandler}
-          />
-        </label>
-        <div
-          className="button"
-          onClick={() => this.handleClick(list.id, addItemHandler)}
-        >
-          Add Item
-        </div>
-      </span>
+      <form
+        onSubmit={event => this.handleSubmit(event, list.id, addItemHandler)}
+      >
+        <span className="addItem">
+          <label>
+            Name
+            <input
+              type="text"
+              name="name"
+              value={this.state.name}
+              onChange={this.nameChangeHandler}
+            />
+          </label>
+          <label>
+            Quantity
+            <input
+              type="text"
+              name="quantity"
+              value={this.state.quantity}
+              onChange={this.quantityChangeHandler}
+            />
+          </label>
+          <input type="submit" className="button" value="Add Item" />
+        </span>
+      </form>
     );
   }
 }
@@ -73,9 +73,7 @@ AddItem.propTypes = {
 };
 
 AddItem.defaultProps = {
-  nameChangeHandler: () => null,
-  quantityChangeHandler: () => null,
-  handleClick: () => null
+  addItemHandler: () => null
 };
 
 export default AddItem;
