@@ -13,3 +13,7 @@ Run `npm start`
 ### Run the Tests
 
 Run `npm test`
+
+## TODO
+
+- Add endpoints for deleting lists and items

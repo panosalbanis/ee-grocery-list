@@ -1,6 +1,6 @@
-swagger: "2.0"
+swagger: '2.0'
 info:
-  version: "0.0.1"
+  version: '0.0.1'
   title: Equal Experts Grocery List API
 host: localhost:10010
 basePath: /v1/
@@ -18,26 +18,26 @@ paths:
       description: Returns all grocery lists
       operationId: retrieveLists
       responses:
-        "200":
+        '200':
           description: Success
           schema:
-            $ref: "#/definitions/GroceryLists"
+            $ref: '#/definitions/GroceryLists'
         default:
           description: Error
           schema:
-            $ref: "#/definitions/ErrorResponse"
+            $ref: '#/definitions/ErrorResponse'
     post:
       produces:
         - text/plain; charset=utf-8
       description: Creates a new  grocery list
       operationId: createList
       responses:
-        "201":
+        '201':
           description: Success
         default:
           description: Error
           schema:
-            $ref: "#/definitions/ErrorResponse"
+            $ref: '#/definitions/ErrorResponse'
   /lists/{id}:
     x-swagger-router-controller: lists
     get:
@@ -50,14 +50,14 @@ paths:
           required: true
           type: integer
       responses:
-        "200":
+        '200':
           description: Success
           schema:
-            $ref: "#/definitions/GroceryList"
+            $ref: '#/definitions/GroceryList'
         default:
           description: Error
           schema:
-            $ref: "#/definitions/ErrorResponse"
+            $ref: '#/definitions/ErrorResponse'
     put:
       description: Adds an item to a grocery list
       operationId: addItemToList
@@ -77,12 +77,12 @@ paths:
           schema:
             $ref: '#/definitions/Item'
       responses:
-        "204":
+        '204':
           description: Success
         default:
           description: Error
           schema:
-            $ref: "#/definitions/ErrorResponse"
+            $ref: '#/definitions/ErrorResponse'
   /swagger:
     x-swagger-pipe: swagger_raw
 definitions:
@@ -109,11 +109,11 @@ definitions:
       items:
         type: array
         items:
-          $ref: "#/definitions/Item"
+          $ref: '#/definitions/Item'
   GroceryLists:
     type: array
     items:
-      $ref: "#/definitions/GroceryList"
+      $ref: '#/definitions/GroceryList'
   ErrorResponse:
     required:
       - message

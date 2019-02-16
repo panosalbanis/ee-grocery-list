@@ -3,7 +3,7 @@
 const SwaggerExpress = require('swagger-express-mw');
 const loki = require('lokijs');
 
-const db = new loki('loki.json');
+const db = new loki();
 var groceryLists = db.addCollection('groceryLists');
 
 const app = require('express')();
