@@ -20,3 +20,9 @@ You will also see any lint errors in the console.
 Run `npm test`
 
 Launches the test runner in the interactive watch mode.
+
+## TODO
+
+- Add ability to cross items out (mark as bought).
+- Add validation.
+- Handle aggregation of items (increase quantity if an item is added again).
