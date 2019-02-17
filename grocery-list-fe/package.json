@@ -14,7 +14,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prettier": "prettier --write --single-quote src/**/*.{js,css}"
+    "prettier": "prettier --write --single-quote src/**/*.{js,css}",
+    "lint": "eslint src/**/*.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -28,6 +29,7 @@
   "devDependencies": {
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.8.0",
+    "eslint": "^5.14.0",
     "prettier": "^1.16.4",
     "react-addons-test-utils": "^15.6.2"
   }
