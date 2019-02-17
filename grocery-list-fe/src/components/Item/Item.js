@@ -7,8 +7,12 @@ function Item(props) {
   return (
     <div className="container">
       <li className="row justify-content-between">
-        <div className="name col-lg-8">{name}</div>
-        <div className="quantity col-lg-2">{quantity}</div>
+        <div className="name col-lg-8">
+          <h2>{name}</h2>
+        </div>
+        <div className="quantity col-lg-2">
+          <h2>{quantity}</h2>
+        </div>
       </li>
     </div>
   );
