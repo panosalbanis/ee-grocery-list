@@ -36,31 +36,35 @@ class AddItem extends Component {
   render() {
     const { addItemHandler, list } = this.props;
     return (
-      <form
-        onSubmit={event => this.handleSubmit(event, list.id, addItemHandler)}
-      >
-        <span className="addItem">
-          <label>
-            Name
-            <input
-              type="text"
-              name="name"
-              value={this.state.name}
-              onChange={this.nameChangeHandler}
-            />
-          </label>
-          <label>
-            Quantity
-            <input
-              type="text"
-              name="quantity"
-              value={this.state.quantity}
-              onChange={this.quantityChangeHandler}
-            />
-          </label>
-          <input type="submit" className="button" value="Add Item" />
-        </span>
-      </form>
+      <div className="container">
+        <form
+          onSubmit={event => this.handleSubmit(event, list.id, addItemHandler)}
+        >
+          <div className="form-group">
+            <div className="row justify-content-between">
+              <label className="col-sm-auto">
+                Name
+                <input
+                  type="text"
+                  name="name"
+                  value={this.state.name}
+                  onChange={this.nameChangeHandler}
+                />
+              </label>
+              <label className="col-sm-auto">
+                Quantity
+                <input
+                  type="text"
+                  name="quantity"
+                  value={this.state.quantity}
+                  onChange={this.quantityChangeHandler}
+                />
+              </label>
+              <input type="submit" className="button" value="Add Item" />
+            </div>
+          </div>
+        </form>
+      </div>
     );
   }
 }

@@ -54,19 +54,21 @@ class App extends Component {
 
   render() {
     return (
-      <div className="groceryListContainer">
-        <div className="groceryLists">
-          <GroceryLists
-            lists={this.state.groceryLists}
-            groceryListSelectedHandler={this.groceryListSelectedHandler}
-          />
-          <AddGroceryList handleClick={this.addGroceryListHandler} />
-        </div>
-        <div className="currentGroceryList">
-          <GroceryList
-            list={this.state.currentGroceryList}
-            addItemHandler={this.addItemHandler}
-          />
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-2">
+            <GroceryLists
+              lists={this.state.groceryLists}
+              groceryListSelectedHandler={this.groceryListSelectedHandler}
+            />
+            <AddGroceryList handleClick={this.addGroceryListHandler} />
+          </div>
+          <div className="col">
+            <GroceryList
+              list={this.state.currentGroceryList}
+              addItemHandler={this.addItemHandler}
+            />
+          </div>
         </div>
       </div>
     );

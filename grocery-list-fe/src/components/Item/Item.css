@@ -1,8 +1,11 @@
-span {
-  margin-left: 1em;
-}
-
 li {
   list-style: none;
-  margin-bottom: 0.5em;
+}
+
+.name {
+  width: auto;
+}
+
+.quantity {
+  width: auto;
 }

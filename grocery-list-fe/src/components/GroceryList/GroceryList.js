@@ -7,14 +7,16 @@ import './GroceryList.css';
 function GroceryList(props) {
   const { list, addItemHandler } = props;
   return list && list.id ? (
-    <div className="groceryList">
-      <ul>
-        {list.items &&
-          list.items.map(({ name, quantity }) => (
-            <Item key={name} name={name} quantity={quantity} />
-          ))}
-      </ul>
-      <div className="addItemContainer">
+    <div className="col">
+      <div className="groceryList">
+        <ul className="no-padding">
+          {list.items &&
+            list.items.map(({ name, quantity }) => (
+              <Item key={name} name={name} quantity={quantity} />
+            ))}
+        </ul>
+      </div>
+      <div>
         <AddItem addItemHandler={addItemHandler} list={list} />
       </div>
     </div>
