@@ -9,3 +9,23 @@
   cursor: pointer;
   background-color: lightsteelblue;
 }
+
+.main {
+  margin-right: auto;
+  margin-left: auto;
+  min-height: 100vh;
+  box-shadow: 0px 0px 15px lightgrey;
+}
+
+.header {
+  background-color: #1795d4;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.logo {
+  width: 200px;
+  height: 70px;
+  background-repeat: no-repeat;
+  background-image: url(https://www.equalexperts.com/wp-content/themes/equalexperts/assets/logo.svg);
+}

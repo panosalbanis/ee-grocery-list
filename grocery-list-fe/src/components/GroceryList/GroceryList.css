@@ -5,6 +5,10 @@
   border: black 1px dashed;
 }
 
+.addItemContainer {
+  margin-top: 2em;
+}
+
 .no-padding {
   padding: 0%;
 }

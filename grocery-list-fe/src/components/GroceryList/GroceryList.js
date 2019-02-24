@@ -16,7 +16,7 @@ function GroceryList(props) {
             ))}
         </ul>
       </div>
-      <div>
+      <div className="addItemContainer">
         <AddItem addItemHandler={addItemHandler} list={list} />
       </div>
     </div>
