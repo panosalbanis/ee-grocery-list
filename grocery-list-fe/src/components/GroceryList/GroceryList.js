@@ -9,7 +9,7 @@ function GroceryList(props) {
   return list && list.id ? (
     <div className="col">
       <div className="groceryList">
-        <ul className="no-padding">
+        <ul className="noPadding">
           {list.items &&
             list.items.map(({ name, quantity }) => (
               <Item key={name} name={name} quantity={quantity} />
@@ -20,7 +20,9 @@ function GroceryList(props) {
         <AddItem addItemHandler={addItemHandler} list={list} />
       </div>
     </div>
-  ) : null;
+  ) : (
+    <h2 className="noList">Select a list or add a new one</h2>
+  );
 }
 
 GroceryList.propTypes = {
