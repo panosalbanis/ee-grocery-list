@@ -21,4 +21,8 @@ const getGroceryList = async id => {
   return response.data || [];
 };
 
+const deleteItem = async () => {
+  return Promise.resolve('OK');
+};
+
 export { addGroceryList, addItem, getGroceryLists, getGroceryList };
