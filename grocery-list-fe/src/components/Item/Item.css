@@ -9,3 +9,18 @@ li {
 .quantity {
   width: auto;
 }
+
+.deleteButton {
+  background: transparent;
+  border: 1px solid black;
+  border-radius: 2em;
+  color: black;
+  display: inline-block;
+  font-size: 12px;
+  height: 3em;
+  line-height: 1.5em;
+  margin: 0 0 8px;
+  padding: 0;
+  text-align: center;
+  width: 3em;
+}

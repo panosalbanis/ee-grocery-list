@@ -83,6 +83,33 @@ paths:
           description: Error
           schema:
             $ref: '#/definitions/ErrorResponse'
+  /lists/{listId}/{itemId}:
+    x-swagger-router-controller: lists
+    delete:
+      description: Deletes an item from a grocery list
+      operationId: deleteItemFromList
+      produces:
+        - text/plain; charset=utf-8
+      consumes:
+        - application/json
+      parameters:
+        - name: listId
+          in: path
+          description: The Id of the grocery list to delete from
+          required: true
+          type: integer
+        - name: itemId
+          in: path
+          description: The Id of the grocery item to delete
+          required: true
+          type: integer
+      responses:
+        '204':
+          description: Success
+        default:
+          description: Error
+          schema:
+            $ref: '#/definitions/ErrorResponse'
   /swagger:
     x-swagger-pipe: swagger_raw
 definitions:
