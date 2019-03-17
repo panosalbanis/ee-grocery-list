@@ -23,7 +23,28 @@ const retrieveList = (req, res) => {
 const addItemToList = (req, res) => {
   req.groceryLists.findAndUpdate(
     { id: req.swagger.params.id.value },
-    ({ id, items }) => ({ id, items: items.push(req.body) })
+    ({ id, items }) => ({
+      id,
+      items: items.push(Object.assign({ id: items.length + 1 }, req.body))
+    })
+  );
+  res.status(204);
+  res.end();
+};
+
+const deleteItemFromList = (req, res) => {
+  req.groceryLists.findAndUpdate(
+    { id: req.swagger.params.listId.value },
+    ({ id, items }) => {
+      const index = items.findIndex(
+        item => item.id !== req.swagger.params.itemId.value
+      );
+      items.splice(index, 1);
+      return {
+        id,
+        items
+      };
+    }
   );
   res.status(204);
   res.end();
@@ -35,5 +56,6 @@ module.exports = {
   retrieveLists,
   createList,
   retrieveList,
-  addItemToList
+  addItemToList,
+  deleteItemFromList
 };

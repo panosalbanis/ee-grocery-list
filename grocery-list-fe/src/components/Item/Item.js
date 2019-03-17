@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './Item.css';
 
 function Item(props) {
-  const { name, quantity, onDeleteHandler } = props;
+  const { listId, itemId, name, quantity, deleteItemHandler } = props;
   return (
     <div className="container">
       <li className="row justify-content-between">
@@ -13,7 +13,10 @@ function Item(props) {
         <div className="quantity col-lg-2">
           <h2>{quantity}</h2>
         </div>
-        <button className="deleteButton" onClick={onDeleteHandler}>
+        <button
+          className="deleteButton"
+          onClick={() => deleteItemHandler(listId, itemId)}
+        >
           <h2>x</h2>
         </button>
       </li>
@@ -22,13 +25,17 @@ function Item(props) {
 }
 
 Item.propTypes = {
+  listId: PropTypes.number.isRequired,
+  itemId: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
-  quantity: PropTypes.number.isRequired
+  quantity: PropTypes.number.isRequired,
+  deleteItemHandler: PropTypes.func
 };
 
 Item.defaultProps = {
   name: '',
-  quantity: ''
+  quantity: '',
+  deleteItemHandler: () => null
 };
 
 export default Item;

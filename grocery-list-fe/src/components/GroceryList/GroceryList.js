@@ -5,14 +5,21 @@ import AddItem from '../AddItem/AddItem';
 import './GroceryList.css';
 
 function GroceryList(props) {
-  const { list, addItemHandler } = props;
+  const { list, addItemHandler, deleteItemHandler } = props;
   return list && list.id ? (
     <div className="col">
       <div className="groceryList">
         <ul className="noPadding">
           {list.items &&
-            list.items.map(({ name, quantity }) => (
-              <Item key={name} name={name} quantity={quantity} />
+            list.items.map(({ id, name, quantity }) => (
+              <Item
+                key={id}
+                listId={list.id}
+                itemId={id}
+                name={name}
+                quantity={quantity}
+                deleteItemHandler={deleteItemHandler}
+              />
             ))}
         </ul>
       </div>
@@ -35,11 +42,13 @@ GroceryList.propTypes = {
       })
     )
   }),
-  addItemHandler: PropTypes.func
+  addItemHandler: PropTypes.func,
+  deleteItemHandler: PropTypes.func
 };
 
 GroceryList.defaultProps = {
-  addItemHandler: () => null
+  addItemHandler: () => null,
+  deleteItemHandler: () => null
 };
 
 export default GroceryList;

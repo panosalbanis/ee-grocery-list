@@ -6,7 +6,8 @@ import {
   getGroceryLists,
   getGroceryList,
   addGroceryList,
-  addItem
+  addItem,
+  deleteItem
 } from './apiCalls';
 import './App.css';
 
@@ -23,6 +24,7 @@ class App extends Component {
     this.updateGroceryLists = this.updateGroceryLists.bind(this);
     this.addGroceryListHandler = this.addGroceryListHandler.bind(this);
     this.addItemHandler = this.addItemHandler.bind(this);
+    this.deleteItemHandler = this.deleteItemHandler.bind(this);
   }
   async componentDidMount() {
     await this.updateGroceryLists();
@@ -40,6 +42,10 @@ class App extends Component {
   async addItemHandler(listId, name, quantity) {
     await addItem(listId, name, quantity);
     await this.updateGroceryList(listId);
+  }
+
+  async deleteItemHandler(listId, itemId) {
+    await deleteItem(listId, itemId);
   }
 
   async updateGroceryLists() {
@@ -70,6 +76,7 @@ class App extends Component {
             <GroceryList
               list={this.state.currentGroceryList}
               addItemHandler={this.addItemHandler}
+              deleteItemHandler={this.deleteItemHandler}
             />
           </div>
         </div>
